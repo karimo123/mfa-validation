@@ -5,7 +5,7 @@ import "./InputField.css"
 
 const InputField = () => {
 
-    const [input, setInput] = useState(["","","","","",""]) //input array containing all input boxes
+    const [input, setInput] = useState(["", "", "", "", "", ""]) //input array containing all input boxes
     const [confirmed, setConfirmed] = useState(false) //boolean indicating if the validation worked or not
     const [textType, setTextType] = useState("text") //used to change the text type within the input boxes(password or text)
     const [errorOccurred, setErrorOccurred] = useState(false) //boolean indicating if there was an error or not 
@@ -24,7 +24,7 @@ const InputField = () => {
 
         //updating the input variable
         let temp_input = [...input]; //Making shallow copy of array
-        temp_input[index] = value; 
+        temp_input[index] = value;
         setInput(temp_input)
 
 
@@ -33,6 +33,16 @@ const InputField = () => {
         if (inputBox.nextElementSibling && value) {
             inputBox.nextElementSibling.focus()
             inputBox.nextElementSibling.select()
+        }
+
+    }
+
+    function skipBackwards(event) {
+        //going skipBackwards
+        const inputBox = event.target
+        if (inputBox.previousElementSibling && !event.target.value && event.keyCode === 8 || event.keyCode === 46) {
+            inputBox.previousElementSibling.select()
+            inputBox.previousElementSibling.focus()
         }
     }
 
@@ -70,9 +80,9 @@ const InputField = () => {
             .catch(error => {
                 setErrorOccurred(true)
             });
-            if(response){
-                setConfirmed(response.data.valid) //changing the confirmed boolean to whatever is returned
-            }
+        if (response) {
+            setConfirmed(response.data.valid) //changing the confirmed boolean to whatever is returned
+        }
 
     }
 
@@ -80,12 +90,12 @@ const InputField = () => {
         <div className="input__form--wrapper">
             <h2>Enter your authentication code:</h2>
             <form className="input--form" action="" onSubmit={(event) => { handleSubmit(event) }}>
-                <input className="input--box" type={textType} value={input[0]} onChange={(event) => { updateInput(event.target.value, 0, event) }} onPaste={(event) => { handlePaste(event) }} maxLength="1" />
-                <input className="input--box" type={textType} value={input[1]} onChange={(event) => { updateInput(event.target.value, 1, event) }} maxLength="1" />
-                <input className="input--box" type={textType} value={input[2]} onChange={(event) => { updateInput(event.target.value, 2, event) }} maxLength="1" />
-                <input className="input--box" type={textType} value={input[3]} onChange={(event) => { updateInput(event.target.value, 3, event) }} maxLength="1" />
-                <input className="input--box" type={textType} value={input[4]} onChange={(event) => { updateInput(event.target.value, 4, event) }} maxLength="1" />
-                <input className="input--box" type={textType} value={input[5]} onChange={(event) => { updateInput(event.target.value, 5, event) }} maxLength="1" />
+                <input className="input--box" type={textType} value={input[0]} onKeyDown={(event) => { skipBackwards(event)}} onChange={(event) => { updateInput(event.target.value, 0, event) }} onPaste={(event) => { handlePaste(event) }} maxLength="1" />
+                <input className="input--box" type={textType} value={input[1]} onKeyDown={(event) => { skipBackwards(event)}} onChange={(event) => { updateInput(event.target.value, 1, event) }} maxLength="1" />
+                <input className="input--box" type={textType} value={input[2]} onKeyDown={(event) => { skipBackwards(event)}} onChange={(event) => { updateInput(event.target.value, 2, event) }} maxLength="1" />
+                <input className="input--box" type={textType} value={input[3]} onKeyDown={(event) => { skipBackwards(event)}} onChange={(event) => { updateInput(event.target.value, 3, event) }} maxLength="1" />
+                <input className="input--box" type={textType} value={input[4]} onKeyDown={(event) => { skipBackwards(event)}} onChange={(event) => { updateInput(event.target.value, 4, event) }} maxLength="1" />
+                <input className="input--box" type={textType} value={input[5]} onKeyDown={(event) => { skipBackwards(event)}} onChange={(event) => { updateInput(event.target.value, 5, event) }} maxLength="1" />
             </form>
             <div className="passwordMode__container">
                 <button className="passwordMode__btn" onClick={handlePasswordMode}>Password Mode:</button>
