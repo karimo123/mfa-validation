@@ -1,0 +1,50 @@
+.input--form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input--box {
+    width: 20px;
+    margin: 0 6px;
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+    
+}
+
+.input__form--wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.text--green {
+    color: green;
+    font-size: 24px;
+}
+
+.text--red {
+    color: red;
+    font-size: 24px;
+}
+
+.passwordMode__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 144px;
+}
+
+.passwordMode__btn {
+    margin-right: 12px;
+    background-color: #0b031b;
+    color: white;
+    padding: 12px 24px;
+    font-size: 20px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
