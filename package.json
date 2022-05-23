@@ -1,5 +1,5 @@
 {
-  "proxy": "https://mfa-validation.vercel.app/",
+  "proxy": "https://mfa-validation.vercel.app/https://coop-interview.outstem.io/",
   "name": "mfa-validation-app",
   "version": "0.1.0",
   "private": true,

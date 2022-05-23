@@ -76,7 +76,7 @@ const InputField = () => {
 
         //Should be an error when input is "000000" but could be a bug with api 
         //since error only occurs at "00000" (5 zeros instead of 5)
-        const response = await axios.post("https://coop-interview.outstem.io/validate", dataSent)
+        const response = await axios.post("validate", dataSent)
             .catch(error => {
                 setErrorOccurred(true)
             });
