@@ -90,12 +90,49 @@ const InputField = () => {
         <div className="input__form--wrapper">
             <h2>Enter your authentication code:</h2>
             <form className="input--form" action="" onSubmit={(event) => { handleSubmit(event) }}>
-                <input className="input--box" type={textType} value={input[0]} onKeyDown={(event) => { skipBackwards(event)}} onChange={(event) => { updateInput(event.target.value, 0, event) }} onPaste={(event) => { handlePaste(event) }} maxLength="1" />
-                <input className="input--box" type={textType} value={input[1]} onKeyDown={(event) => { skipBackwards(event)}} onChange={(event) => { updateInput(event.target.value, 1, event) }} maxLength="1" />
-                <input className="input--box" type={textType} value={input[2]} onKeyDown={(event) => { skipBackwards(event)}} onChange={(event) => { updateInput(event.target.value, 2, event) }} maxLength="1" />
-                <input className="input--box" type={textType} value={input[3]} onKeyDown={(event) => { skipBackwards(event)}} onChange={(event) => { updateInput(event.target.value, 3, event) }} maxLength="1" />
-                <input className="input--box" type={textType} value={input[4]} onKeyDown={(event) => { skipBackwards(event)}} onChange={(event) => { updateInput(event.target.value, 4, event) }} maxLength="1" />
-                <input className="input--box" type={textType} value={input[5]} onKeyDown={(event) => { skipBackwards(event)}} onChange={(event) => { updateInput(event.target.value, 5, event) }} maxLength="1" />
+                <input className="input--box"
+                    type={textType}
+                    value={input[0]}
+                    onKeyDown={(event) => { skipBackwards(event) }}
+                    onChange={(event) => { updateInput(event.target.value, 0, event) }}
+                    onPaste={(event) => { handlePaste(event) }}
+                    maxLength="1"
+                />
+                <input className="input--box"
+                    type={textType}
+                    value={input[1]}
+                    onKeyDown={(event) => { skipBackwards(event) }}
+                    onChange={(event) => { updateInput(event.target.value, 1, event) }}
+                    maxLength="1"
+                />
+                <input className="input--box"
+                    type={textType}
+                    value={input[2]}
+                    onKeyDown={(event) => { skipBackwards(event) }}
+                    onChange={(event) => { updateInput(event.target.value, 2, event) }}
+                    maxLength="1"
+                />
+                <input className="input--box"
+                    type={textType}
+                    value={input[3]}
+                    onKeyDown={(event) => { skipBackwards(event) }}
+                    onChange={(event) => { updateInput(event.target.value, 3, event) }}
+                    maxLength="1"
+                />
+                <input className="input--box"
+                    type={textType}
+                    value={input[4]}
+                    onKeyDown={(event) => { skipBackwards(event) }}
+                    onChange={(event) => { updateInput(event.target.value, 4, event) }}
+                    maxLength="1"
+                />
+                <input className="input--box"
+                    type={textType}
+                    value={input[5]}
+                    onKeyDown={(event) => { skipBackwards(event) }}
+                    onChange={(event) => { updateInput(event.target.value, 5, event) }}
+                    maxLength="1"
+                />
             </form>
             <div className="passwordMode__container">
                 <button className="passwordMode__btn" onClick={handlePasswordMode}>Password Mode:</button>
